@@ -28,5 +28,5 @@ class FragmentFavorite(val data : List<Restaurant>)  : Fragment(){
         RestaurantList1.layoutManager = LinearLayoutManager(activity)
         adapter.notifyDataSetChanged()
     }
-    
+
 }

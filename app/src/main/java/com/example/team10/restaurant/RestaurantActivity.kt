@@ -29,7 +29,7 @@ class RestaurantActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.ic_favorite->{
-                    loadFragment(FragmentFavorite(favoriteList))
+                    loadFragment(FragmentFavorite(dsLike))
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> {
@@ -44,7 +44,7 @@ class RestaurantActivity : AppCompatActivity() {
     private fun loadFragment(fragment : Fragment)
     {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frag_container_restaurant,fragment)
+        transaction.replace(R.id.frag_restaurant,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
