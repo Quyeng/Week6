@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".restaurant.RestaurantActivity" />
+        <activity android:name=".movie.MovieActivity" />
     </application>
 
 </manifest>

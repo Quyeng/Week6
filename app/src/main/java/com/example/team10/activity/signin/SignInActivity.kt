@@ -13,11 +13,9 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.team10.MainActivity
 import com.example.team10.R
-import com.example.team10.activity.signup.SignUpActivity
 import com.example.team10.databinding.ActivitySignInBinding
-import com.example.team10.restaurant.RestaurantActivity
+import com.example.team10.movie.MovieActivity
 
 
 class SignInActivity : Fragment() {
@@ -52,7 +50,7 @@ class SignInActivity : Fragment() {
                 showToastMessage("Sign in Successful")
                 val bundle = bundleOf("email" to user.email)
                 val intent = Intent(activity,
-                    RestaurantActivity::class.java)
+                    MovieActivity::class.java)
                 startActivity(intent)
             }
 

@@ -1,35 +1,31 @@
-package com.example.team10.restaurant
+package com.example.team10.movie
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
+import android.view.Menu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.team10.R
-import com.example.team10.databinding.ActivityRestaurantBinding
 import kotlinx.android.synthetic.main.activity_restaurant.*
+import kotlinx.android.synthetic.main.movie_fragment.*
 
+class MovieActivity : AppCompatActivity() {
 
-class RestaurantActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRestaurantBinding
-    private lateinit var viewModel: RestaurantViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_restaurant)
 
-        viewModel = ViewModelProvider(this).get(RestaurantViewModel::class.java)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_restaurant)
-
-        loadFragment(FragmentTop())
+        loadFragment(NowPlaying())
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.ic_top->{
-                    loadFragment(FragmentTop())
+                R.id.nowplaying->{
+                    loadFragment(NowPlaying())
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.ic_favorite->{
-                    loadFragment(FragmentFavorite(dsLike))
+                R.id.toprate->{
+                    loadFragment(TopRated())
                     return@setOnNavigationItemSelectedListener true
                 }
                 else -> {
@@ -37,15 +33,21 @@ class RestaurantActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //reused
+        menuInflater.inflate(R.menu.change,menu)
+        return true
+    }
 
     private fun loadFragment(fragment : Fragment)
     {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frag_restaurant,fragment)
+        transaction.replace(R.id.frag_movie,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
+
 }
