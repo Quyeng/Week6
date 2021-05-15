@@ -47,6 +47,11 @@
     <string name="activity_profile_full_name">Full name</string>
     <string name="activity_profile_email">E-mail</string>
     <string name="activity_profile_phone_number">Phone number</string>
+    <string name="Overview">TextView</string>
+    <string name="titel">TextView</string>
+    <string name="overview">Overview</string>
+    <string name="rate">TextView</string>
+    <string name="poster">TODO</string>
 
 
 </resources>
