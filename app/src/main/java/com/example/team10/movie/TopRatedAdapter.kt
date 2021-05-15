@@ -22,9 +22,9 @@ class TopRatedAdapter(var vpq: Context?) : RecyclerView.Adapter<TopRatedAdapter.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view : View = if(viewType == GRID_ITEM)
-            layoutInflater.inflate(R.layout.restaurant_item, parent, false)
+            layoutInflater.inflate(R.layout.linear_movie, parent, false)
         else
-            layoutInflater.inflate(R.layout.grid_restaurant, parent, false)
+            layoutInflater.inflate(R.layout.grid_movie, parent, false)
         return ViewHolder(view)
     }
 
@@ -49,10 +49,9 @@ class TopRatedAdapter(var vpq: Context?) : RecyclerView.Adapter<TopRatedAdapter.
         Picasso.get().load("https://image.tmdb.org/t/p/w500" + item.posterPath).into(holder.ava)
         holder.ava.setOnClickListener{
             val intent = Intent(vpq, DetailMovie::class.java)
-            intent.putExtra("movie_detail",item)
+            intent.putExtra("vpq",item)
             vpq?.startActivity(intent)
         }
-        Log.d("AAA",item.toString())
     }
 
     override fun getItemCount(): Int {

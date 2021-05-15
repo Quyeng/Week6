@@ -17,10 +17,10 @@ class DetailMovie : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(DetailMovieViewModel::class.java)
 
         val intent = intent
-        val movie : Movie = intent.getSerializableExtra("movie_detail") as Movie
+        val movie : Movie = intent.getSerializableExtra("vpq") as Movie
         binding.apply {
-            Picasso.get().load("https://image.tmdb.org/t/p/w500" + movie.posterPath).into(detailMovieImg)
-            titleMovieTxt.text = movie.title
+            Picasso.get().load("https://image.tmdb.org/t/p/w500" + movie.posterPath).into(imgMovie)
+            nameMovie.text = movie.title
             dateCount.text= movie.releaseDate
             rateArrangeCount.text = movie.voteAverage.toString()
             rateCount.text = movie.voteCount.toString()

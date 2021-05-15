@@ -14,7 +14,7 @@ class MovieActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_restaurant)
+        setContentView(R.layout.activity_movie)
 
         loadFragment(NowPlaying())
 

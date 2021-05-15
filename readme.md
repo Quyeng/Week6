@@ -1,2 +1,2 @@
-# Week5
-![Demo](week5_team10.gif)
+# Week6
+![Demo](week6_team10.gif)

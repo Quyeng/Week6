@@ -3,5 +3,5 @@
     <item
         android:id="@+id/change"
         android:iconTint="@color/black"
-        android:title="Grid" />
+        android:title="Grid View" />
 </menu>

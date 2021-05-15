@@ -34,7 +34,7 @@ data class Movie (
 
     @SerializedName("vote_count")
     val voteCount: Long? = null
-):Serializable
+):Serializable //thêm dòng này để ko lỗi putExtra
 
 
 enum class OriginalLanguage {

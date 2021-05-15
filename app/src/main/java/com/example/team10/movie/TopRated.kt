@@ -50,12 +50,12 @@ class TopRated : Fragment() {
         when (item.itemId) {
             R.id.change -> {
                 adapter.switchItemView()
-                return if (item.title == "List") {
-                    item.title = "Grid"
+                return if (item.title == "List View") {
+                    item.title = "Grid View"
                     binding.listMovie.layoutManager = LinearLayoutManager(activity)
                     true
                 } else {
-                    item.title = "List"
+                    item.title = "List View"
                     binding.listMovie.layoutManager = GridLayoutManager(activity,2)
                     true
                 }
