@@ -36,7 +36,6 @@ class MovieActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        //reused
         menuInflater.inflate(R.menu.change,menu)
         return true
     }

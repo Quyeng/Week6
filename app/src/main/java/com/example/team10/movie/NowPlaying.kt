@@ -31,7 +31,7 @@ class NowPlaying : Fragment() {
             adapter.setDataList(it)
         })
 
-        adapter = NowPlayingAdapter()
+        adapter = NowPlayingAdapter(activity)
 
         binding.apply {
             listMovie.adapter = adapter

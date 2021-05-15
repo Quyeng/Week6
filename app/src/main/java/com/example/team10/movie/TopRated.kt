@@ -31,7 +31,7 @@ class TopRated : Fragment() {
             adapter.setDataList(it)
         })
 
-        adapter = TopRatedAdapter()
+        adapter = TopRatedAdapter(activity)
 
         binding.apply {
            listMovie.adapter = adapter

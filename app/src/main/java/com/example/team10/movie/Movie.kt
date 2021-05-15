@@ -1,6 +1,7 @@
 package com.example.team10.movie
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Movie (
     val adult: Boolean? = null,
@@ -33,7 +34,7 @@ data class Movie (
 
     @SerializedName("vote_count")
     val voteCount: Long? = null
-)
+):Serializable
 
 
 enum class OriginalLanguage {

@@ -1,5 +1,7 @@
 package com.example.team10.movie
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.team10.R
 import com.squareup.picasso.Picasso
 
-class TopRatedAdapter() : RecyclerView.Adapter<TopRatedAdapter.ViewHolder>(){
+class TopRatedAdapter(var vpq: Context?) : RecyclerView.Adapter<TopRatedAdapter.ViewHolder>(){
 
     private val LIST_ITEM : Int = 0
     private val GRID_ITEM : Int = 1
@@ -20,9 +22,9 @@ class TopRatedAdapter() : RecyclerView.Adapter<TopRatedAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view : View = if(viewType == GRID_ITEM)
-            layoutInflater.inflate(R.layout.grid_restaurant, parent, false)
-        else
             layoutInflater.inflate(R.layout.restaurant_item, parent, false)
+        else
+            layoutInflater.inflate(R.layout.grid_restaurant, parent, false)
         return ViewHolder(view)
     }
 
@@ -45,7 +47,11 @@ class TopRatedAdapter() : RecyclerView.Adapter<TopRatedAdapter.ViewHolder>(){
         holder.name.text = item.title
         holder.detail.text = item.overview
         Picasso.get().load("https://image.tmdb.org/t/p/w500" + item.posterPath).into(holder.ava)
-
+        holder.ava.setOnClickListener{
+            val intent = Intent(vpq, DetailMovie::class.java)
+            intent.putExtra("movie_detail",item)
+            vpq?.startActivity(intent)
+        }
         Log.d("AAA",item.toString())
     }
 

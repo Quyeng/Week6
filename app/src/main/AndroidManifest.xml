@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TEAM10">
+        <activity android:name=".movie.DetailMovie"></activity>
         <activity
             android:name=".activity.splash.SplashActivity"
             android:noHistory="true"
